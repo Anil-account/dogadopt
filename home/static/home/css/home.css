@@ -1,0 +1,226 @@
+/* .img-responsive
+{
+    width:10%;
+
+} */
+
+.profile-header {
+    transform: translateY(5rem);
+}
+
+
+
+.box{
+    position: relative;
+    /* background: black; */
+    width:100%;
+}
+.text{
+    /* position: relative; */
+    color:white;
+    font-size: 4vw;
+    font-family:'Times New Roman', Times, serif;
+    top: 25%;
+    left:15%;
+
+}
+
+.nav-item {
+    padding-left:20px
+}
+
+
+.number {
+    color: coral;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+}
+.label {
+    font-size:5em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.headline {
+    font-size:3em
+}
+
+.story-img {
+    width:100%;
+    max-width: 200px;
+    height:auto;
+}
+
+.footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+    
+
+}
+
+.center {
+    margin-left:auto ;
+    margin-right:auto;
+}
+
+.links {
+    padding: 0;
+    list-style: none;
+
+    
+}
+.links li a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.links li {
+    margin-bottom: 10px;
+
+}
+
+.icon {
+    padding: 0 100px;
+}
+
+.social{
+    color: wheat;
+    height: 3rem;
+    font-size: 2rem;
+    margin-top :1rem ;
+    
+    
+}
+
+.back-fb{
+    background-color: #3B5998;
+
+}
+
+.back-inst{
+    background-color: #dd4b39;;
+}
+
+.back-twit{
+    background-color: #2daae1; 
+}
+
+.social:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image:url(../images/adopt.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.signup-content{
+    border-radius: 10px
+}
+
+.background-col{
+    background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
+}
+
+
+.headline{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.back-login{
+    background: linear-gradient(to left, #92e4e1, #9ecc83);
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+.image-border{
+    border-bottom: 5px solid red;
+}
+
+.heading{
+    font-size: 2.5rem;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+}
+
+.about{
+    font-size: 1rem;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    
+}
+
+.spacing{
+
+    margin: 3rem 0;
+}
+
+.image-spacing{
+    margin-top: 2rem;
+    margin-left: 8rem;
+    margin-bottom: 7rem;
+}
+
+.text-spacing{
+    margin-left: 7rem;
+    font-size: 1.5rem;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    
+}
+
+.brief{
+    padding-top: 8rem;
+    font-size: 1.5rem;
+    font-family: "Museo Slab 300","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+    
+}
+
+.text-header{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+.text-desc{
+    font-size: 1.5rem;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+}
+
+.col-bg{
+    background-color: #d1b78f;
+}
+.card-bo{
+    max-height: 6.3rem;
+    overflow: hidden;
+}
+.img-tag
+{
+    width: 120px;
+    min-height: 120px;
+}
+
+/* ----------------------------------------------------- */
+.dog-desc  {
+    padding-top: 3rem;
+}
+
+.dog-feature{
+    font-size: 1.4rem;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+}
+
+
+.opt-lbl
+{
+    /* color:red; */
+    width: auto;
+    float: none;
+}

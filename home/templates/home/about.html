@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>About</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="img img-fluid mb-3">
+    <img src="{% static 'home/images/about_1440x300.jpg' %}"  width="100%" class="image-border"  alt="images">
+</div>
+<div class="container col-8  spacing">
+    <div class="heading mb-3 mt-3">
+        <p>We Are Their Voice</p>
+    </div>
+    <div class="mt-3 mb-3">
+        <p class="about">
+            The American Society for the Prevention of Cruelty to Animals® (ASPCA®)
+             was the first humane society to be established in North America and is,
+              today, one of the largest in the world.Our organization was founded on the belief that animals are entitled
+               to kind and respectful treatment at the hands of humans and must be protected 
+               under the law. Headquartered in New York City, the ASPCA maintains a strong local presence, 
+               and with programs that extend our anti-cruelty mission across the country, we are recognized 
+               as a national animal welfare organization. We are a privately funded 501(c)(3) not-for-profit
+                corporation, and are proud to boast more than 2 million supporters across the country.
+                
+                The ASPCA’s mission, as stated by founder Henry Bergh in 1866, is
+                 “to provide effective means for the prevention of cruelty to animals 
+                 throughout the United States.”
+        </p>
+    </div>
+
+</div>
+<div class="bg-light mt-4 mb-3 ">
+    <div class="container spacing ">
+        <div class="row">
+            <div class="col mt-5 image-spacing text-center">
+                <img src="{% static 'home/images/kevin_chou.jpg'%}" class="rounded border image-fluid" width="300rem" alt="">
+                <div>
+                  <p class="mt-4 ">Harry Anderson</p>
+                </div>
+                <div>
+                  <p > Dog Adaption President <span>&amp</span> CEO </p>
+                </div>
+            </div>
+            <div class="col brief">
+              <p>Helping vulnerable animals and keeping pets in safe and loving homes
+                 requires a commitment from all of us—advocates, pet owners, shelters,
+                  leaders, and entire communities. When we work together under a common
+                   cause, we’re both saving lives and elevating our society and its laws to
+                    ensure cruelty victims and other at-risk animals receive the protection 
+                    and care they deserve.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

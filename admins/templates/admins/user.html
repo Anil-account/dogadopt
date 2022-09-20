@@ -1,0 +1,69 @@
+{% extends 'adminlayout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>
+    Admin
+</title>
+{% endblock %}
+
+
+{% block content %}
+
+
+  
+<div class="col bg-white">
+    <div class="p-3 w-50 mx-auto text-center font-weight-bold">
+        <form class="form" method="GET">
+
+            {{user_filter.form.as_p}}
+            <button type="submit" class="btn w-50 btn-primary">Search</button>
+        </form>
+      </div>
+
+  <div class="container pt-5 pb-5">
+      <h3 class="pt-3 text-center">User Admin</h3>
+
+      
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Email</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+             
+              
+              {% for user_data in all_users %}
+            <tr>
+              <th scope="row">{{user_data.username}}</th>
+              <td>{{user_data.first_name}}</td>
+              <td>{{user_data.last_name}}</td>
+              <td>{{user_data.email}}</td>
+              <td><div class="row">
+                  <a href="/admins/deleteuser/{{user_data.id}}"><button class="btn btn-danger ml-3">Delete</button></a>
+                  {% if user_data.is_staff %}
+                  <a href="/admins/changetouser/{{user_data.username}}"> <button class="btn btn-primary">Remove from Admin</button> </a>
+                  {% else %}
+                  <a href="/admins/changetoadmin/{{user_data.username}}"> <button class="btn btn-info ml-3">Change to Admin</button> </a>
+                  {% endif %}
+                </div>
+            </td>
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+        </table>
+  
+      </div>
+
+  </div>
+
+{% endblock %}
+
+

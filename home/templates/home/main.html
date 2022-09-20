@@ -1,0 +1,159 @@
+
+{% extends 'layout.html' %}
+{% block title%}
+<title>Dog Adoption</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item box active">
+        <img src="{% static 'home/images/pup.jpg' %}" class="d-block w-100" alt="...">
+        <p class="text text-center position-absolute">It takes nothing to be a kind human to creatures.</p>
+
+      </div>
+      <div class="carousel-item box">
+        <img src="{% static 'home/images/s2.jpg' %}" class="d-block w-100" alt="...">
+        <p class="text text-center position-absolute">Animals are God’s creation, we don’t own them, <br>but we can love them</p>
+
+      </div>
+      <div class="carousel-item box">
+        <img src="{% static 'home/images/s4.jpg' %}" class="d-block w-100" alt="...">
+        <p class="text text-center position-absolute">No matter what a pet is always by your side.</p>
+
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+
+   
+    <div class="container mt-5 mb-5">
+      <div class="row text-center img-center">
+        <div class="col-lg-3 col-sm-6">
+          <img src="{% static 'home/images/KAT-6.png' %}" alt="dog Home">
+          <p class="number">700</p>
+          <p class="lable">Home found through adoption</p>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <img src="{% static 'home/images/KAT-7.png' %}" alt="Shelter">
+          <p class="number">3,000</p>
+          <p class="lable">Birth control surgeries preformed</p>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <img src="{% static 'home/images/KAT-8.png' %}" alt="rescue">
+          <p class="number">1000</p>
+          <p class="lable">Emergency rescue conducted</p>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <img src="{% static  'home/images/KAT-9.png' %}" alt="vaccine">
+          <p class="number">5,000</p>
+          <p class="lable">Rabies vaccines administered</p>
+        </div>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="text-center font-italic ml-auto">
+        <p class="headline">Our Stories</p>
+      </div>
+      <div class=" position-relative col-lg-12 col-sm-12 row m-0  mb-4 mt-4 border">
+        <div class="col-sm-10 col-md-6 col-lg-6 row">
+          <img src="{% static 'home/images/street2.jpg' %}" class="story-img img-fluid " style="width: 30rem;" alt="rescued dog pic" >
+        </div>
+        <div class="media-body col-sm-4 col-lg-6">
+          <h5 class="mt-3">Three Dog Night: Homeless Pet Owners Suffer Silently</h5>
+          <p>As panic and anxiety bubble over for many of us dealing with both the medical
+             and non-health-related hardships resulting from the global COVID-19 pandemic,
+              those pet owners living on the streets find a hard life made harder.</p>
+        </div>
+      </div>
+
+      <div class=" position-relative col-lg-12 col-sm-12 row m-0  mb-4 mt-4 border">
+        <div class="col-sm-10 col-md-6 col-lg-6 row">
+          <img src="{% static 'home/images/street1.jfif' %}" class="story-img  img-fluid " style="width: 30rem;"  alt="rescued dog pic" >
+        </div>
+        <div class="media-body col-sm-4 col-lg-6">
+          <h5 class="mt-3">Media with stretched link</h5>
+          <p>This is some placeholder content for the media object. It is intended to mimic what some real-world content would look 
+            like, and we're using it here to give the component a bit of body and size.</p>
+        </div>
+      </div>
+      <div class=" position-relative col-lg-12 col-sm-12 row m-0  mb-4 mt-4 border">
+        <div class="col-sm-10 col-md-6 col-lg-6 row">
+          <img src="{% static 'home/images/street.jpg' %}" class="story-img  img-fluid " style="width: 30rem;"  alt="rescued dog pic" >
+        </div>
+        <div class="media-body col-sm-4 col-lg-6">
+          <h5 class="mt-3">Media with stretched link</h5>
+          <p>This is some placeholder content for the media object. It is intended to mimic what some real-world content would look l
+            ike, and we're using it here to give the component a bit of body and size.</p>
+        </div>
+      </div>
+      <div class="headline text-center font-italic ml-auto">
+        <p>Adopt now</p>
+      </div>
+      <div class="row mb-sm-3 d-flex justify-content-center ">
+        <div class="card col-sm-3 mr-md-2 mb-3" style="width: 18rem;">
+        <img src="{% static 'home/images/street.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Kali</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/adopt" class="btn btn-primary">Adopt Now</a>
+          </div>
+        </div>
+        <div class="card col-sm-3 mr-md-2 mb-3" style="width: 18rem;">
+        <img src="{% static 'home/images/street.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Shere</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/adopt" class="btn btn-primary">Adopt Now</a>
+          </div>
+        </div>
+          <div class="card col-sm-3 mr-md-2 mb-3" style="width: 18rem;">
+          <img src="{% static 'home/images/street.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Rume</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/adopt" class="btn btn-primary">Adopt Now</a>
+          </div>
+        </div>
+       
+        </div>
+
+      </div>
+      <hr>
+      <div class="container mt-5 mb-5">
+        <div class="text-center font-italic ml-auto">
+          <p class="headline">Your Pet Adoption Journey</p>
+        </div>
+        <div class="row text-center img-center">
+          <div class="col-lg-4 col-sm-6">
+            <img src="{% static 'home/images/search.png' %}" style="width: 20rem;" alt="dog Home">
+            <h2 class="">SEARCH</h2>
+            <p class="lable p-2">It's easy to find a dog who's right for you at a shelter or rescue group. </p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <img src="{% static 'home/images/heart.png' %}" style="width: 20rem;" alt="Shelter">
+            <H2 class="">CONTACT</H2>
+            <p class="lable p-2">Once you find a pet, click "learn more about me" to get contact info for their
+               shelter or rescue. Contact them to learn more about how to meet and adopt the pet.</p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <img src="{% static 'home/images/house.png' %}" style="width: 20rem;" alt="rescue">
+            <H2 class="">ADOPT</H2>
+            <p class="lable p-2">The rescue or shelter will walk you through their adoption process. Prepare 
+              your home for the arrival of your dog or cat to help them adjust to their new family.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    {% endblock %}

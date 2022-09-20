@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+    Dog Description
+</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container pt-4">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <img src="{% static 'home/images/kali.jfif' %}"  style="width: 100%;" alt="">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 dog-desc">
+        <div class="dog-feature">
+          <p>Kali</p>
+        </div>
+        <div class="dog-feature">
+          <p>Gender:</p>
+        </div>
+        <div class="dog-feature">
+          <p>Age:</p>
+        </div>
+        <div class="dog-feature">
+          <p>Breed:</p>
+        </div>
+        <div class="dog-feature ">
+          <p>Posted By:</p>
+        </div>
+        <div class="dog-feature">
+            <input type="submit" class="btn btn-primary col-4" value="Adopt">
+        </div>
+      </div>
+
+    </div>
+    <div class="dog-feature mt-3 mb-3" >
+      <hr>
+      <p>Description</p>
+    </div>
+    <div class="card-body">
+      <p>
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+        blah blah blah blah 
+      </p>
+    </div>
+    <div class="dog-feature">
+      <hr>
+      <p>Comments</p>
+    </div>
+    <div class="container">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Umm...</h5>
+          <p class="card-text">Need to login to view content</p>
+          <a href="#" class="btn btn-primary">Login</a>
+        </div>
+      </div>
+
+    </div>
+      
+  </div>
+{% endblock %}

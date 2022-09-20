@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>Abopt Dog</title>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="text-center bg-info pt-5 pb-3">
+    <div class="">
+      <p class="text-header">Adopt Dog</p>
+    </div>
+    <div class="container col-sm-11 col-md-8">
+      <p class="text-desc">Let's find the best dog food for your pooch - from top kibble picks 
+        for diabetic dogs, to whether the raw food movement is right for you,
+         we'll delve into everything you need to know about feeding your dog!</p>
+    </div>
+  </div>
+  <div class="m-5">
+
+  </div>
+
+    <div class="container">
+      <div class="row">
+        {% for pet in all_pets %}
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+          <div class="card text-center overflow-hidden" style="width: 18rem; height: 25rem;">
+            <img src="{{pet.image.url}}" class="card-img-top" alt="dog image" height="200" width="200">
+            <div class="card-body">
+              <h5 class="card-title text-capitalize">{{pet.name}}</h5>
+              <p class="card-text card-bo">{{pet.description}}
+              </p>
+            </div>
+            <div class="card-body">
+              <a href="/adopt/{{pet.id}}" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        
+
+    
+        </div>
+    </div>
+{% endblock %}

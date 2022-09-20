@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+<title>signup</title>
+<style>
+
+  
+
+  .help-block{
+    display: none;
+  }
+
+  ul{
+    display: none;
+  }
+  
+</style>
+{% endblock %}
+
+{% block content%}
+
+
+
+<div class="container-fluid background-col ">
+  <div class="row col-sm-12 m-0 ">
+      <div class=" col-lg-10  col-xl-8 mx-auto bg-light m-3 p-sm-3 signup-content ">
+
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% endfor %}
+          <h3 class="display-4 mb-4 headline text-center ma-auto">Sign up</h3>
+          <form method="POST" class="form-horizontal">
+            {% csrf_token  %}
+              {{ form | bootstrap_horizontal}}
+              <div class="custom-control custom-checkbox mb-3">
+                  <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                  <label for="customCheck1" class="custom-control-label" req>I agree to the
+                    <a href="#" data-target="#exampleModalCenter" data-toggle="modal">Terms and Conditions</a>                                                                                                      <!-- Modal -->
+                                                     
+                  </label>
+              </div>
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm " value="Sign in">
+              
+          </form>
+            
+    
+
+      </div>
+  </div>
+</div>
+<script>
+  var form_fields = document.getElementsByTagName('input')
+  form_fields[1].placeholder = "First Name"
+  form_fields[2].placeholder = "Last Name"
+  form_fields[3].placeholder = "Username"
+  form_fields[4].placeholder = "Email"
+  form_fields[5].placeholder = "Password"
+  form_fields[6].placeholder = "Confirm Password"
+
+
+
+  for (var field in form_fields){
+    field.className += 'form-control col-12 '
+  }
+</script>
+{% endblock %}
+
+  

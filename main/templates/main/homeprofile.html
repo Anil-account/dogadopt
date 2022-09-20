@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+    Profile
+</title>
+{% endblock %}
+{% block content %}
+<div class="row py-3 px-4">
+    <div class="col-xl-10 col-md-10 col-sm-10 mx-auto">
+
+        <!-- Profile widget -->
+        <div class="bg-white shadow rounded overflow-hidden">
+            <div class="px-4 pt-0 pb-4 bg-dark">
+                <div class="media align-items-end profile-header">
+                    
+                    <div class="profile mr-3"><a href="/user/profileUpdate" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
+                    <div class="media-body mb-5 text-white">
+                        <h4 class="mt-0 mb-5">{{user.first_name}} {{user.last_name}}</h4>
+                        <!-- <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-light p-4 py-5 d-flex justify-content-end text-center">
+            </div>
+
+            <div class="py-4 px-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="mb-0">Recent post</h5><a href="#" class="btn btn-link text-muted">Show all</a>
+                </div>
+                <div class="row">
+                    {% for pet in all_pets %}
+                    
+                    <div class="col-lg-6 mb-2 pr-lg-1">
+
+                        <div class="card text-center overflow-hidden" style="width: 18rem; height: 25rem;">
+                            <img src="{{pet.image.url}}" class="card-img-top" alt="dog image" height="200" width="200">
+                            <div class="card-body">
+                              <h5 class="card-title text-capitalize">{{pet.name}}</h5>
+                              <p class="card-text card-bo">{{pet.description}}
+                              </p>
+                            </div>
+                            <div class="card-body row">
+                              <a href="/adopt/{{pet.id}}" class="btn btn-primary col">View Details</a>
+
+                              <div class="dropdown" style="position: absolute; top: 0;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  More
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="/user/userdeletepet/{{pet.id}}">Delete</a>
+                                  <a class="dropdown-item" href="/user/userupdatepet/{{pet.id}}">Update</a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                    </div>
+                    
+                    
+                    {% endfor %}
+                    
+                </div>
+                <div class="py-4">
+                    <h5 class="mb-3">Recent stories</h5>
+                    <div class="p-4  rounded shadow-sm">
+                      {% for story in story_pet%}
+                        <div class="row">
+                          <div class="col-12">
+                            <div class=" position-relative col-lg-12 col-sm-12 row m-0  mb-4 mt-4 border">
+                              <div class="col-sm-10 col-md-6 col-lg-6 row">
+                                <img src="{{story.image.url}}" class="story-img  img-fluid "style="width: 50%;"  alt="rescued dog pic" >
+                                <div class="dropdown" style="position: absolute; top: 2%;">
+                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    More
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="/user/userdeletestory/{{story.id}}">Delete</a>
+                                    <a class="dropdown-item" href="/user/userupdatestory/{{story.id}}">Update</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="media-body col-sm-4 col-lg-6">
+                                <h5 class="mt-3">
+                                  {{story.title}}</h5>
+                                <p>{{story.details}}</p>
+                                <a href="#" class="btn btn-primary m-3" data-toggle="modal" data-target="#exampleModal">Read More</a>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+
+
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title " id="exampleModalLabel">{{story.title}}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cotainer">
+                                    <img src="{{story.image.url}}" class="story-img  img-fluid  " style="width: 70%; "  alt="rescued dog pic" >
+                                 </div>
+                                 <div class="container">
+                                     <p class="p-4" style="font-family: 'Times New Roman', Times, serif; font-size: 1.2rem;">
+                                      {{story.details}}
+                                     </p>
+                                 </div>   
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                    
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor%}
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- End profile widget -->
+
+    </div>
+</div>
+
+{% endblock %}
+
+    
+
+
+
+
+
+
+
+
+

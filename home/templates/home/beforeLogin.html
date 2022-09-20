@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+    Dog Description
+</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container pt-4">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <img src="{{pet_detail.image.url}}"  style="width: 100%;" alt="">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 dog-desc">
+        <div class="dog-feature row">
+          <p class="text-center col">Name:</p>
+          <label class="col-lg-7" for="">{{pet_detail.name}}</label>
+        </div>
+        <div class="dog-feature row">
+          <p class="text-center col">Gender:</p>
+          <label class="col-lg-7" for="">{{pet_detail.sex}}</label>
+        </div>
+        <div class="dog-feature row">
+          <p class="text-center col">Age:</p>
+          <label class="col-lg-7" for="">{{pet_detail.age}}</label>
+        </div>
+        <div class="dog-feature row">
+          <p class="text-center col">Breed:</p>
+          <label class="col-lg-7" for="">{{pet_detail.breed}}</label>
+        </div>
+        <div class="dog-feature row">
+          <p class="text-center col">Posted By:</p>
+          <label class="col-lg-7" for="">{{pet_detail.postedby.username}}</label>
+        </div>
+        <div class="dog-feature row">
+          <p class="text-center col">Contact:</p>
+          <label class="col-lg-7" for="">{{pet_detail.contact}}</label>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="dog-feature mt-3 mb-3" >
+      <hr>
+      <p>Description</p>
+    </div>
+    <div class="card-body">
+      <p>
+        {{pet_detail.description}}
+      </p>
+    </div>
+
+  
+      
+  </div>
+{% endblock %}

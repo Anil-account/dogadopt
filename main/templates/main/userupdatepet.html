@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+    Dog Description
+</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+{% for message in messages %}
+<p id="messages" class="text-center">{{message}} </p>
+{% endfor %}
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <!-- <div class="mt-2 ml-sm-0 ml-md-3 col-12 col-md-4">
+        <div class="card">
+          <img src="{% static 'home/images/profile.png' %}" height="450" width="450" alt="Dog image" required>
+          <input type="file" name="image" class="form-control" required>
+
+        </div>
+      </div> -->
+      <div class="col-12 col-md-6 dog-desc mx-auto">
+        <div class=" row dog-feature mb-3">
+          <span class="col text-center">Name:</span>
+          <input class=" ml-auto form-control col-lg-7" type="text" value="{{pet.name}}" name="name" required>
+        </div>
+
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Age:</span>
+          <input class="col-lg-7 form-control" type="number" name="age" value="{{pet.age}}" required>
+        </div>
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Breed:</span>
+          <input class="col-lg-7 form-control" type="text" name="breed" value="{{pet.breed}}" required>
+        </div>
+
+
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Contact:</span>
+          <input class="col-lg-7 form-control" type="number" name="contact" value="{{pet.contact}}">
+        </div>
+
+      </div>
+
+    </div>
+    <div class="dog-feature mt-3 mb-3" >
+      <hr>
+      <p class="pl-3">Description</p>
+    </div>
+    
+    <div class="card-body">
+      <textarea name="description" class="col-sm-12" id="" cols="100" rows="10" required>{{pet.description}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-5 ml-2">Save changes</button>
+
+  </form>
+
+      
+  </div>
+{% endblock %}

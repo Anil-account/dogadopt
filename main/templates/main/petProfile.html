@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+    Dog Description
+</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+{% for message in messages %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<div class="alert alert-info alert-dismissable">
+  <a class="panel-close close" data-dismiss="alert">×</a> 
+  <i class="fa fa-coffee"></i>
+  <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+</div>
+{% endif %}
+
+{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<div class="alert alert-info alert-dismissable">
+  <a class="panel-close close" data-dismiss="alert">×</a> 
+  <i class="fa fa-coffee"></i>
+  <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+</div>
+{% endif %}
+{% endfor %}
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+
+      <div class="col-12 col-md-6 dog-desc mx-auto">
+        <div class=" row dog-feature mb-3">
+          <span class="col text-center">Name:</span>
+          <input class=" ml-auto form-control col-lg-7" type="text" value="" name="name" required>
+        </div>
+
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Gender:</span>
+          <div class="col-lg-7">
+          <input type="radio" name="gender" value="Male" id="male"/>
+          <label  for="male"class="opt-lbl">Male</label>
+          <input type="radio" name="gender" value="Female" id="female"/>
+          <label  for="female"class="opt-lbl">Female</label>
+
+          </div>    
+          <!-- <input class="col-lg-7 form-control" name="" type="text"> -->
+        </div>
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Age:</span>
+          <input class="col-lg-7 form-control" type="number" name="age" required>
+        </div>
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Breed:</span>
+          <input class="col-lg-7 form-control" type="text" name="breed" required>
+        </div>
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Upload Image:</span>
+          <!-- <input class="col-lg-7 form-control" type="text" name="username" required> -->
+          <input class="col-lg-7 form-control"  type="file" name="image" class="form-control" required>
+
+        </div>
+
+        <div class="row dog-feature mb-3">
+          <span class="col text-center">Contact:</span>
+          <input class="col-lg-7 form-control" type="number" name="contact">
+        </div>
+
+      </div>
+
+    </div>
+    <div class="dog-feature mt-3 mb-3" >
+      <hr>
+      <p class="pl-3">Description</p>
+    </div>
+    <div class="card-body">
+      <textarea name="description" class="col-sm-12" id="" cols="100" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-5 ml-2">Save changes</button>
+
+  </form>
+
+      
+  </div>
+{% endblock %}

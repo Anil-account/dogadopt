@@ -1,0 +1,51 @@
+{% extends 'adminlayout.html' %}
+{% block title %}
+<title>
+    Admin
+</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+
+  
+ 
+
+  <div class="container pt-5 pb-5">
+    <div class="row">
+      <div class="col-4 mt-4">
+        <div class="card" style="width: 18rem;">
+                      <img src="{% static 'home/images/logo.png' %}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <a class="card-text nav-link text-center text-secondary" href="/admins/useradmin" >User Profile</a>
+
+                      </div>
+                    </div>
+              </div>
+              <div class="col-4 mt-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="{% static 'home/images/logo.png' %}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <a class="card-text nav-link text-secondary text-center"  href="/admins/story">Story</a>
+                      </div>
+                    </div>    
+  
+              </div>
+              <div class="col-4 mt-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="{% static 'home/images/logo.png' %}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <a class="card-text nav-link text-secondary text-center"  href="/admins/viewadapt" >Post</a>
+                      </div>
+                    </div>    
+  
+              </div>
+  
+          </div>
+  
+      </div>
+
+  </div>
+
+{% endblock %}

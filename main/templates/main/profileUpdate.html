@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>
+  Profile Update
+</title>
+{% endblock %}
+
+
+{% block content %}
+  <div class=" py-5 px-4 ">
+    <div class="col-xl-10 col-md-10 col-sm-10 mx-auto">
+      <div class="bg-white shadow rounded overflow-hidden">
+        <div class="container pt-3">
+            <h1>Edit Profile</h1>
+              <hr>           
+              <!-- edit form column -->
+              {% for message in messages %}
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+              <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+              </div>
+              {% endif %}
+      
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+              <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+              </div>
+              {% endif %}
+              {% endfor %}
+
+                <h3 class="pt-3 text-center">Personal info</h3>
+                <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="container align-center ">
+                    <div class=" personal-info col-12">
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label">First name:</label>
+                        <div>
+                          <input class="form-control" type="text" value="{{user_info.first_name}}" name="firstname">
+                        </div>
+                      </div>
+                      <div class="form-group">
+          
+                        <label class="col-lg-3 control-label">Last name:</label>
+                        <div >
+                          <input class="form-control" type="text" value="{{user_info.last_name}}" name="lastname">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div >
+                          <input class="form-control" type="email" value="{{user_info.email}}" name="email">
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div >
+                          <input type="submit" class="btn btn-primary" value="Save Changes">
+                          <span></span>
+                          <input type="reset" class="btn btn-default" value="Cancel">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    
+</body>
+</html>
+
+
+

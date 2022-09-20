@@ -1,0 +1,58 @@
+{% extends 'adminlayout.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+<title>
+    Admin
+</title>
+{% endblock %}
+
+
+{% block content %}
+
+
+  
+<div class="col bg-white">
+
+
+  <div class="container pt-5 pb-5">
+      <h3 class="pt-3 text-center">Story</h3>
+
+      
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">Title</th>
+              <th scope="col">Image</th>
+              <th scope="col">Description</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+             
+              
+              {% for story in stories %}
+            <tr>
+              <th scope="row">{{story.username.username}}</th>
+              <td>{{story.title}}</td>
+              <td><img src="{{story.image.url}}" alt="" class="img-fluid" style="width: 10rem;"></td>
+              <td>{{story.details}}</td>
+              <td><div class="row">
+                  <a href="/admins/deletestory/{{story.id}}"><button class="btn btn-danger ml-3">Delete</button></a>
+                </div>
+            </td>
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+        </table>
+  
+      </div>
+
+  </div>
+
+{% endblock %}
+
+
